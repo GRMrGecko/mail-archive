@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Mail Archive</title>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/moment/min/moment-with-locales.min.js"></script>
+    <script src="/bower_components/mustache/mustache.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="/bower_components/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/index.css" rel="stylesheet">
+
+    <script src="/index.js"></script>
+</head>
+
+<body>
+    <div id="customcss"></div>
+    <div id="templates">
+        <script id="message_list_message_template" type="x-tmpl-mustache">
+            <tr id="{{ uuid }}" data="{{ encoded_message }}">
+                <td class="from">{{ from }}</td>
+                <td class="to">{{ to }}</td>
+                <td class="subject">{{ subject }}</td>
+                <td class="status">{{ status }}</td>
+                <td class="received">{{ formatted_date }}</td>
+            </tr>
+        </script>
+    </div>
+    <div class="wrapper">
+        <div id="message"></div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="navbar-brand">
+                <strong id="navbar_brand">Mail Archive</strong>&nbsp;
+                <span id="message_count"></span>
+            </div>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" id="searchInput">
+            </form>
+        </nav>
+        <div class="table-responsive" id="message_list_container">
+            <table class="table" id="message_list">
+                <thead>
+                    <tr>
+                        <th class="from">From</th>
+                        <th class="to">To</th>
+                        <th class="subject">Subject</th>
+                        <th class="status">Status</th>
+                        <th class="received">Received</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="message_list_resizer">&nbsp;</div>
+        <div id="message_view">
+            <header id="message_header">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="title">Received</td>
+                            <td class="content received"></td>
+                            <td class="title">Size</td>
+                            <td class="content size"></td>
+                        </tr><tr>
+                            <td class="title">From</td>
+                            <td class="content from"></td>
+                            <td class="title">Score</td>
+                            <td class="content spam_score"></td>
+                        </tr><tr>
+                            <td class="title">To</td>
+                            <td class="content to"></td>
+                            <td class="title">Status</td>
+                            <td class="content status"></td>
+                        </tr><tr>
+                            <td class="title">Subject</td>
+                            <td class="content subject"></td>
+                            <td class="title">Source IP</td>
+                            <td class="content source_ip"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" id="mailDownloadButton">Download</button>
+                    <button type="button" class="btn btn-light" id="mailLearnHamButton">Learn Ham</button>
+                    <button type="button" class="btn btn-danger" id="mailLearnSpamButton">Learn Spam</button>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <button class="nav-link plaintext active">Plain Text</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link html">HTML</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link source">Source</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link log">Log</button>
+                    </li>
+                </ul>
+            </header>
+            <article id="message_contents"></article>
+        </div>
+    </div>
+</body>

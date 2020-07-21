@@ -1,0 +1,134 @@
+#templates {
+    display: none;
+}
+#message {
+    width: 100%;
+    height: 54px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 25pt;
+    display: none;
+    z-index: 10;
+}
+#customcss {
+    display: none;
+}
+
+html, body {
+    padding: 0;
+    height: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+}
+nav.navbar {
+    padding: 0.2rem 1rem;
+    flex: 0 1 auto;
+}
+#message_list_container {
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 10em;
+    min-height: 3em;
+    display: block;
+    flex: 0 1 auto;
+}
+#message_list {
+    margin-bottom: 0;
+}
+#message_list tr.active {
+    background-color: #0058CF;
+    color: #fff;
+}
+#message_list td, #message_list th {
+    padding: 0;
+    padding-left: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#message_list thead {
+    background-color: #eee;
+    position: sticky;
+    top: 0;
+}
+#message_list tbody tr {
+    cursor: pointer;
+}
+#message_list td.to, #message_list td.from,
+#message_list th.to, #message_list th.from {
+    max-width: 300px;
+}
+#message_list td.status, #message_list th.status {
+    width: 100px;
+}
+#message_list td.received, #message_list th.received {
+    width: 172px;
+}
+#message_list_resizer {
+    cursor: ns-resize;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    line-height: 2px;
+    flex: 0 1 auto;
+}
+#message_view {
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+}
+#message_header {
+    background-color: #eee;
+    flex: 0 1 auto;
+}
+#message_header table {
+    font-size: 10pt;
+}
+#message_header table .title {
+    width: 70px;
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+}
+#message_header table .content {
+    min-width: 70px;
+    text-align: left;
+}
+#message_header .nav-tabs {
+    padding-top: 10px;
+}
+#message_header .nav-item {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+#message_header .nav-link {
+    color: #000;
+    background-color: #ddd;
+    padding: .2rem 1rem;
+}
+#message_header .nav-link.active {
+    color: #000;
+    background-color: #fff;
+}
+#message_header .nav-link:hover {
+    background-color: #eee;
+}
+#message_header .nav-link:disabled {
+    background-color: #ccc;
+}
+#message_header .btn-group {
+    float: right;
+    padding-right: 10px;
+}
+#message_contents {
+    overflow: scroll;
+}

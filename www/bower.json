@@ -1,0 +1,31 @@
+{
+  "name": "mail-archive",
+  "main": "index.js",
+  "authors": [
+    "James Coleman <grmrgecko@gmail.com>"
+  ],
+  "description": "Email Archive Server with SysLog support and web interface.",
+  "keywords": [
+    "Email",
+    "archive",
+    "message",
+    "syslog"
+  ],
+  "license": "MIT",
+  "homepage": "https://mrgeckosmedia.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "fontawesome": "^5.14.0",
+    "mustache": "^4.0.1",
+    "moment": "^2.27.0"
+  }
+}
